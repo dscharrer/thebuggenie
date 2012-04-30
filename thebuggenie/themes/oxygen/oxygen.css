@@ -43,7 +43,8 @@ input:-moz-placeholder {
     color:    #BBB;
 }
 
-pre { overflow: auto; }
+pre { overflow: auto; width: 99%; }
+pre > * { max-width: 0px; }
 
 select { height: 22px; }
 textarea { padding: 0; font-family: 'Droid Sans Mono', monospace; }
