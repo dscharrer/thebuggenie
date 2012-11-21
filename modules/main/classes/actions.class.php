@@ -2511,6 +2511,12 @@
 				{
 					if ($request['comment_body'] == '')
 						throw new Exception($i18n->__('The comment must have some content'));
+					
+					if(TBGUser::isThisGuest()) {
+						$captcha = trim(strtolower($request['comment_captcha']));
+						if ($captcha != 'fatalis' && $captcha != 'arx fatalis')
+							throw new Exception('You don\'t seem to be human. Bloody gobblers!');
+					}
 
 					if ($comment_applies_type == TBGComment::TYPE_ISSUE && !$request->isAjaxCall())
 					{
