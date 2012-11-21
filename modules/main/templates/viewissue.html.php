@@ -76,6 +76,7 @@
 						</div>
 						<div style="font-size: 12px;">
 							<?php echo '<b>' . __('Posted %posted_at_time% - updated %last_updated_at_time%', array('%posted_at_time%' => '</b><i title="'.tbg_formatTime($issue->getPosted(), 21).'">' . tbg_formatTime($issue->getPosted(), 20) . '</i><b>', '%last_updated_at_time%' => '</b><i title="'.tbg_formatTime($issue->getLastUpdatedTime(), 21).'">' . tbg_formatTime($issue->getLastUpdatedTime(), 20) . '</i>')); ?>
+							&nbsp; Shortlink: <a href="http://arx.vg/<?php echo $issue->getFormattedIssueNo() ?>">http://arx.vg/<?php echo $issue->getFormattedIssueNo() ?></a>
 						</div>
 					</td>
 					<td style="width: 100px; text-align: right;<?php if (!$issue->isVotesVisible()): ?> display: none;<?php endif; ?>" id="votes_additional">
