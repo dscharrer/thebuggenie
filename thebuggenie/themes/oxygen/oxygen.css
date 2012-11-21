@@ -28,6 +28,7 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 input[type="image"] { border: 0px; padding: 0px; width: 16px; height: 16px; background-color: transparent; }
 input[type="checkbox"] { margin: 0; }
 input[type="text"][disabled], input[type="email"][disabled], input[type="url"][disabled], input[type="search"][disabled], input[type="password"][disabled], textarea[disabled], select[disabled] { background-color: #F9F9F9; color: #BBB; }
+input.bad_captcha { background-color: #FCC; }
 
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
