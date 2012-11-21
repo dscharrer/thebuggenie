@@ -80,6 +80,9 @@
 				<?php echo image_tag('spinning_16.gif', array('class' => 'spinning')); ?>
 			</div>
 			<div id="comment_reply_controls_<?php echo $comment->getID(); ?>" class="comment_controls">
+				<?php if (TBGUser::isThisGuest()): ?>
+					Complete the name to prove that you are human: &nbsp; Arx &nbsp; <input type="text" name="comment_captcha" id="comment_captcha_<?php echo $comment->getID(); ?>"> &nbsp; (the original game by Arkane, not Arx Libertatis)<br>
+				<?php endif; ?>
 				<input type="submit" class="comment_replysave" value="<?php echo __('Save changes'); ?>" /> <a href="javascript:void(0)" onclick="$('comment_reply_<?php echo $comment->getID(); ?>').hide();$('comment_view_<?php echo $comment->getID(); ?>').show();"><?php echo __('or cancel'); ?></a>
 			</div>
 		</form>

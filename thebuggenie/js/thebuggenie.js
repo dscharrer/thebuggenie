@@ -1113,6 +1113,15 @@ TBG.Main.Comment.update = function(url, cid) {
 };
 
 TBG.Main.Comment.add = function(url, commentcount_span) {
+	var captcha = $('comment_captcha');
+	if(captcha !== null) {
+		if(captcha.getValue() == '') {
+			captcha.addClassName('bad_captcha');
+			return;
+		} else {
+			captcha.removeClassName('bad_captcha');
+		}
+	}
 	TBG.Main.Helpers.ajax(url, {
 		form: 'comment_form',
 		loading: {
@@ -1141,6 +1150,15 @@ TBG.Main.Comment.add = function(url, commentcount_span) {
 };
 
 TBG.Main.Comment.reply = function(url, reply_comment_id) {
+	var captcha = $('comment_captcha_' + reply_comment_id);
+	if(captcha !== null) {
+		if(captcha.getValue() == '') {
+			captcha.addClassName('bad_captcha');
+			return;
+		} else {
+			captcha.removeClassName('bad_captcha');
+		}
+	}
 	TBG.Main.Helpers.ajax(url, {
 		form: 'comment_reply_form_' + reply_comment_id,
 		loading: {
