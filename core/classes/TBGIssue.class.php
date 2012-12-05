@@ -1038,7 +1038,7 @@
 		public function isEditable()
 		{
 			if ($this->getProject()->isArchived()) return false;
-			return ($this->isOpen() && ($this->getProject()->canChangeIssuesWithoutWorkingOnThem() || ($this->getWorkflowStep() instanceof TBGWorkflowStep && $this->getWorkflowStep()->isEditable())));
+			return ($this->isOpen() && ($this->getProject()->canChangeIssuesWithoutWorkingOnThem()) || ($this->getWorkflowStep() instanceof TBGWorkflowStep && $this->getWorkflowStep()->isEditable()));
 		}
 		
 		public function isUpdateable()
