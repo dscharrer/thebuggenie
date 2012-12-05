@@ -1204,8 +1204,7 @@
 			if ($this->_editable !== null) return $this->_editable;
 
 			if ($this->getProject()->isArchived()) $this->_editable = false;
-			else $this->_editable = ($this->isOpen() && ($this->getProject()->canChangeIssuesWithoutWorkingOnThem() || ($this->getWorkflowStep() instanceof TBGWorkflowStep && $this->getWorkflowStep()->isEditable())));
-
+			else $this->_editable = ($this->isOpen() && ($this->getProject()->canChangeIssuesWithoutWorkingOnThem()) || ($this->getWorkflowStep() instanceof TBGWorkflowStep && $this->getWorkflowStep()->isEditable()));
 			return $this->_editable;
 		}
 		
