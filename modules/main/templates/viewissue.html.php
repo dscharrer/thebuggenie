@@ -280,6 +280,11 @@
 						<?php $cc++; ?>
 					<?php endforeach; ?>
 				<?php endif; ?>
+				<?php if ($issue->isUpdateable() && TBGSettings::isUploadsEnabled() && $issue->canAttachFiles()): ?>
+					<li class="upload_file">
+						<input class="button button-silver first last" type="button" value="<?php echo __('Attach a file'); ?>" onclick="$('attach_file').toggle();">
+					</li>
+				<?php endif; ?>
 				<li class="more_actions">
 					<input class="button button-silver first last" id="more_actions_<?php echo $issue->getID(); ?>_button" type="button" value="<?php echo ($issue->isWorkflowTransitionsAvailable()) ? __('More actions') : __('Actions'); ?>" onclick="$(this).toggleClassName('button-pressed');$('more_actions_<?php echo $issue->getID(); ?>').toggle();">
 				</li>
