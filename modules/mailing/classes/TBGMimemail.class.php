@@ -163,7 +163,7 @@
 			}
 			elseif ($this->isMultipart())
 			{
-				$this->headers['Content-Type'] = "multipart/alternative;\r\n\tboundary=\"----=_MessPart_{$this->sep1}\"\r\n\r\nThis is a multi-part message in MIME format.\r\n\r\n";
+				$this->headers['Content-Type'] = "multipart/alternative; boundary=\"----=_MessPart_{$this->sep1}\"\r\n\r\n";
 			}
 			elseif ($this->getMessageHTML(false))
 			{
