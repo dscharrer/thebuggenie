@@ -28,7 +28,7 @@
 					<?php endif; ?>
 					<input type="hidden" name="forward_url" value="<?php echo $forward_url; ?>">
 					<?php if (TBGUser::isThisGuest()): ?>
-						Complete the name to prove that you are human: &nbsp; Arx &nbsp; <input type="text" name="comment_captcha" id="comment_captcha"> &nbsp; (the original game by Arkane, not Arx Libertatis)<br>
+						<font color="red">Complete the name to prove that you are human:</font> &nbsp; Arx &nbsp; <input type="text" name="comment_captcha" id="comment_captcha"> &nbsp; (the original game by Arkane, not Arx Libertatis)<br>
 					<?php endif; ?>
 					<?php echo __('%create_comment% or %cancel%', array('%create_comment%' => '<input type="submit" class="button button-green" value="'.__('Create comment').'" />', '%cancel%' => javascript_link_tag(__('cancel'), array('onclick'=> "$('comment_add').hide();$('comment_add_button').show();")))); ?>
 				</div>
