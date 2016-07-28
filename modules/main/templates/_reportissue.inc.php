@@ -599,7 +599,11 @@
 				</script>
 			<?php endif; ?>
 			<?php TBGEvent::createNew('core', 'reportissue.prefile')->trigger(); ?>
-			<div class="rounded_box report_issue_submit_container report_issue_desc green borderless" style="clear: both; vertical-align: middle; margin-top: 10px; padding: 5px; height: 25px;">
+			
+			<div class="rounded_box report_issue_submit_container report_issue_desc green borderless" style="clear: both; vertical-align: middle; margin-top: 10px; padding: 5px; height: <?php if (TBGUser::isThisGuest()): ?>55px<?php else: ?>25px<?php endif; ?>;">
+				<?php if (TBGUser::isThisGuest()): ?>
+					<div style="margin-bottom:5px;"><font color="red">Complete the name to prove that you are human:</font> &nbsp; Arx &nbsp; <input type="text" name="issue_captcha" id="issue_captcha" style="width: 200px;"> &nbsp; (the original game by Arkane, not Arx Libertatis)</div>
+				<?php endif; ?>
 				<div style="float: left; padding-top: 3px;"><?php echo __('When you are satisfied, click the %file_issue% button to file your issue', array('%file_issue%' => '<strong>'.__('File issue').'</strong>')); ?></div>
 				<input type="submit" class="button button-silver" value="<?php echo __('File issue'); ?>" id="report_issue_submit_button">
 				<?php echo image_tag('spinning_20.gif', array('id' => 'report_issue_indicator', 'style' => 'display: none;')); ?>

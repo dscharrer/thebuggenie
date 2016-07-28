@@ -1281,6 +1281,13 @@
 				{
 					try
 					{
+						
+						if(TBGUser::isThisGuest()) {
+							$captcha = trim(strtolower($request['issue_captcha']));
+							if ($captcha != 'fatalis' && $captcha != 'arx fatalis')
+								throw new Exception('You don\'t seem to be human. Bloody gobblers!');
+						}
+						
 						$issue = $this->_postIssue();
 						if ($request['return_format'] == 'planning')
 						{
